@@ -10,15 +10,15 @@ const links = [
 ]
 ---
 
-<header class="flex w-full flex-col px-16" data-node-id="2003:22" data-name="header">
-  <div class="flex h-28 items-center justify-between" data-node-id="2001:4" data-name="global-navigation">
+<header class="flex w-full flex-col px-4 md:px-8 lg:px-16" data-node-id="2003:22" data-name="header">
+  <div class="flex flex-wrap items-center justify-between gap-y-4 py-4 lg:h-28 lg:flex-nowrap lg:py-0" data-node-id="2001:4" data-name="global-navigation">
     <a
       href="/"
-      class="font-space-grotesk text-3xl font-heading-logo leading-heading-logo text-brand-accent whitespace-nowrap"
+      class="font-space-grotesk text-2xl lg:text-3xl font-heading-logo leading-heading-logo text-brand-accent whitespace-nowrap"
       data-node-id="2001:5">LOOP THREAD</a
     >
-    <nav aria-label="メインナビゲーション" data-node-id="2001:6" data-name="shop-and-brand-navigation">
-      <ul class="flex items-center gap-8 text-sm font-body-caption leading-body-caption text-brand-accent whitespace-nowrap">
+    <nav aria-label="メインナビゲーション" class="order-last w-full lg:order-none lg:w-auto" data-node-id="2001:6" data-name="shop-and-brand-navigation">
+      <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm lg:gap-8 font-body-caption leading-body-caption text-brand-accent whitespace-nowrap">
         {
           links.map((link) => (
             <li data-node-id={link.id}>

@@ -47,12 +47,12 @@ const legal = [
 ---
 
 <footer
-  class="flex flex-col gap-12 bg-brand-accent px-16 pt-16 pb-8 text-base-white"
+  class="flex flex-col gap-12 bg-brand-accent px-4 pt-12 pb-8 md:px-8 lg:px-16 lg:pt-16 text-base-white"
   data-node-id="2003:39"
   data-name="footer"
 >
-  <div class="flex gap-16" data-node-id="2001:209" data-name="footer-navigation">
-    <div class="flex w-88 shrink-0 flex-col gap-6" data-node-id="2001:210" data-name="brand-closing-statement">
+  <div class="flex flex-col gap-8 lg:flex-row lg:gap-16" data-node-id="2001:209" data-name="footer-navigation">
+    <div class="flex w-full lg:w-88 lg:shrink-0 flex-col gap-6" data-node-id="2001:210" data-name="brand-closing-statement">
       <p class="text-xl font-heading-h3 leading-heading-h3" data-node-id="2001:211">
         選ぶ理由を、<br />着るよろこびに。
       </p>
@@ -60,7 +60,7 @@ const legal = [
         日本発のサステナブルアパレル
       </p>
     </div>
-    <div class="grid flex-1 grid-cols-3 gap-6" data-node-id="2001:213" data-name="footer-link-groups">
+    <div class="grid flex-1 grid-cols-2 gap-6 sm:grid-cols-3" data-node-id="2001:213" data-name="footer-link-groups">
       {
         groups.map((g) => (
           <nav aria-label={g.heading} class="flex flex-col gap-4" data-node-id={g.id} data-name="navigation-group">
@@ -84,18 +84,18 @@ const legal = [
   </div>
   <SectionRule tone="light" nodeId="2001:235" />
   <p
-    class="font-space-grotesk text-8xl font-heading-brand-large leading-heading-brand-large"
+    class="font-space-grotesk text-5xl sm:text-7xl lg:text-8xl font-heading-brand-large leading-heading-brand-large"
     data-node-id="2001:236"
   >
     LOOP THREAD
   </p>
   <div
-    class="flex items-center justify-between text-sm font-body-caption leading-body-caption whitespace-nowrap"
+    class="flex flex-col gap-4 text-sm font-body-caption leading-body-caption md:flex-row md:items-center md:justify-between"
     data-node-id="2001:237"
     data-name="legal-navigation"
   >
     <p class="font-space-grotesk font-body-caption-latin leading-body-caption-latin" data-node-id="2001:238">© LOOP THREAD</p>
-    <ul class="flex items-start gap-8" data-node-id="2001:239" data-name="legal-links">
+    <ul class="flex flex-wrap items-start gap-x-8 gap-y-2" data-node-id="2001:239" data-name="legal-links">
       {
         legal.map(([label, id]) => (
           <li data-node-id={id}>

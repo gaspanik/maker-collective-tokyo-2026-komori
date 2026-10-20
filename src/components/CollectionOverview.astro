@@ -35,11 +35,11 @@ const products = [
 ]
 ---
 
-<section class="flex flex-col gap-12 px-16 pb-24" data-node-id="2001:66" data-name="collection-overview">
+<section class="flex flex-col gap-12 px-4 md:px-8 lg:px-16 pb-12 md:pb-16 lg:pb-24" data-node-id="2001:66" data-name="collection-overview">
   <SectionRule nodeId="2001:67" />
-  <div class="flex gap-16" data-node-id="2001:68" data-name="collection-editorial">
+  <div class="flex flex-col gap-8 lg:flex-row lg:gap-16" data-node-id="2001:68" data-name="collection-editorial">
     <div
-      class="flex w-88 shrink-0 flex-col gap-8 self-start text-brand-accent"
+      class="flex w-full lg:w-88 lg:shrink-0 flex-col gap-8 lg:self-start text-brand-accent"
       data-node-id="2001:69"
       data-name="collection-heading-and-details"
     >
@@ -51,7 +51,7 @@ const products = [
           indexNodeId="2001:72"
           labelNodeId="2001:73"
         />
-        <h2 class="text-3xl font-heading-h1 leading-heading-h1" data-node-id="2001:74">
+        <h2 class="text-2xl lg:text-3xl font-heading-h1 leading-heading-h1" data-node-id="2001:74">
           着るほどに、<br />自分の定番へ。
         </h2>
         <p class="text-base font-body-regular leading-body-regular text-justify" data-node-id="2001:75">
@@ -72,11 +72,11 @@ const products = [
       />
     </div>
     <div class="flex flex-1 flex-col gap-6" data-node-id="2001:81" data-name="product-overview">
-      <ul class="grid grid-cols-3 gap-6" data-node-id="2001:82" data-name="product-list">
+      <ul class="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6" data-node-id="2001:82" data-name="product-list">
         {
           products.map((p) => (
             <li class="flex flex-col gap-4 text-brand-accent" data-node-id={p.id} data-name="product-card">
-              <div class="relative h-86 w-full" data-node-id={`${p.p};2001:84`} data-name="product-concept-photograph">
+              <div class="relative h-90 w-full" data-node-id={`${p.p};2001:84`} data-name="product-concept-photograph">
                 <Image
                   src={p.src}
                   alt={p.alt}

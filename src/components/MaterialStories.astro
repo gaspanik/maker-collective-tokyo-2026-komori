@@ -27,11 +27,11 @@ const stories = [
 ]
 ---
 
-<section class="flex flex-col gap-12 px-16 pb-24" data-node-id="2001:108" data-name="material-stories">
+<section class="flex flex-col gap-12 px-4 md:px-8 lg:px-16 pb-12 md:pb-16 lg:pb-24" data-node-id="2001:108" data-name="material-stories">
   <SectionRule nodeId="2001:109" />
-  <div class="flex gap-16" data-node-id="2001:110" data-name="material-editorial">
+  <div class="flex flex-col gap-8 lg:flex-row lg:gap-16" data-node-id="2001:110" data-name="material-editorial">
     <div
-      class="flex w-88 shrink-0 flex-col gap-8 self-start text-brand-accent"
+      class="flex w-full lg:w-88 lg:shrink-0 flex-col gap-8 lg:self-start text-brand-accent"
       data-node-id="2001:111"
       data-name="editorial-heading"
     >
@@ -42,7 +42,7 @@ const stories = [
         indexNodeId="2001:113"
         labelNodeId="2001:114"
       />
-      <h2 class="text-3xl font-heading-h1 leading-heading-h1" data-node-id="2001:115">
+      <h2 class="text-2xl lg:text-3xl font-heading-h1 leading-heading-h1" data-node-id="2001:115">
         素材を選ぶ。<br />毎日を考える。
       </h2>
       <p class="text-base font-body-regular leading-body-regular text-justify" data-node-id="2001:116">
@@ -53,8 +53,8 @@ const stories = [
       {
         stories.map((s) => (
           <article class="flex flex-col gap-8" data-node-id={s.id} data-name="material-story">
-            <div class="flex gap-8" data-node-id={`${s.p};2001:119`} data-name="texture-and-copy">
-              <div class="relative h-66 w-96 shrink-0" data-node-id={`${s.p};2001:120`} data-name="material-texture">
+            <div class="flex flex-col gap-4 md:flex-row md:gap-8" data-node-id={`${s.p};2001:119`} data-name="texture-and-copy">
+              <div class="relative h-56 w-full shrink-0 md:h-66 md:w-96" data-node-id={`${s.p};2001:120`} data-name="material-texture">
                 <Image
                   src={s.src}
                   alt={s.alt}
