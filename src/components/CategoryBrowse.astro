@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets'
+import tShirt from '@/assets/images/category-t-shirt.webp'
+import sweatshirt from '@/assets/images/category-sweatshirt.webp'
+import outerwear from '@/assets/images/category-outerwear.webp'
+import SectionIndex from './SectionIndex.astro'
+import SectionRule from './SectionRule.astro'
+
+const categories = [
+  {
+    id: '2003:116',
+    imageId: 'I2003:116;2001:49',
+    labelId: 'I2003:116;2001:50',
+    numId: 'I2003:116;2001:51',
+    nameId: 'I2003:116;2001:52',
+    arrowId: 'I2003:116;2001:53',
+    no: '01',
+    name: 'Tシャツ',
+    src: tShirt,
+    alt: 'ライトグレーの台に置かれた、白いクルーネックTシャツの畳み姿。',
+  },
+  {
+    id: '2003:122',
+    imageId: 'I2003:122;2001:49',
+    labelId: 'I2003:122;2001:50',
+    numId: 'I2003:122;2001:51',
+    nameId: 'I2003:122;2001:52',
+    arrowId: 'I2003:122;2001:53',
+    no: '02',
+    name: 'スウェット',
+    src: sweatshirt,
+    alt: 'ライトグレーの台に置かれた、深緑のクルーネックスウェットの畳み姿。',
+  },
+  {
+    id: '2003:128',
+    imageId: 'I2003:128;2001:49',
+    labelId: 'I2003:128;2001:50',
+    numId: 'I2003:128;2001:51',
+    nameId: 'I2003:128;2001:52',
+    arrowId: 'I2003:128;2001:53',
+    no: '03',
+    name: 'アウター',
+    src: outerwear,
+    alt: 'ライトグレーの台に置かれた、襟と前ファスナーのあるグレーのジャケットの畳み姿。',
+  },
+]
+---
+
+<section class="flex flex-col gap-8 px-16 pb-24" data-node-id="2001:39" data-name="category-browse">
+  <SectionRule nodeId="2001:40" />
+  <div class="flex gap-16" data-node-id="2001:41" data-name="category-strip">
+    <div class="flex w-88 shrink-0 flex-col gap-6" data-node-id="2001:42" data-name="browse-heading">
+      <SectionIndex
+        index="01"
+        label="Shop by category"
+        nodeId="2001:43"
+        indexNodeId="2001:44"
+        labelNodeId="2001:45"
+      />
+      <h2
+        class="text-2xl font-heading-h2 leading-heading-h2 text-brand-accent"
+        data-node-id="2001:46"
+      >
+        日常の、定番から。
+      </h2>
+    </div>
+    <ul class="grid flex-1 grid-cols-3 gap-6" data-node-id="2001:47" data-name="category-list">
+      {
+        categories.map((c) => (
+          <li data-node-id={c.id} data-name="category-card">
+            <a href="#" class="flex flex-col gap-4 text-brand-accent">
+              <div class="relative h-40 w-full" data-node-id={c.imageId} data-name="category-garment">
+                <Image
+                  src={c.src}
+                  alt={c.alt}
+                  class="absolute inset-0 size-full object-cover"
+                  widths={[400, 800]}
+                  sizes="(min-width: 1440px) 283px, 33vw"
+                />
+              </div>
+              <div class="flex items-center gap-4" data-node-id={c.labelId} data-name="category-label">
+                <span
+                  class="font-space-grotesk text-sm font-body-caption-latin leading-body-caption-latin"
+                  data-node-id={c.numId}>{c.no}</span
+                >
+                <span
+                  class="flex-1 text-base font-body-link leading-body-link"
+                  data-node-id={c.nameId}>{c.name}</span
+                >
+                <span
+                  class="font-space-grotesk text-lg font-body-arrow leading-body-arrow"
+                  aria-hidden="true"
+                  data-node-id={c.arrowId}>↗</span
+                >
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

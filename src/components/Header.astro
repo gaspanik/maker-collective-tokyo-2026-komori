@@ -1,0 +1,42 @@
+---
+import { ShoppingBag, UserRound } from '@lucide/astro'
+import SectionRule from './SectionRule.astro'
+
+const links = [
+  { label: 'すべての商品', id: '2001:7' },
+  { label: 'コレクション', id: '2001:8' },
+  { label: '私たちについて', id: '2001:9' },
+  { label: '生産背景', id: '2001:10' },
+]
+---
+
+<header class="flex w-full flex-col px-16" data-node-id="2003:22" data-name="header">
+  <div class="flex h-28 items-center justify-between" data-node-id="2001:4" data-name="global-navigation">
+    <a
+      href="/"
+      class="font-space-grotesk text-3xl font-heading-logo leading-heading-logo text-brand-accent whitespace-nowrap"
+      data-node-id="2001:5">LOOP THREAD</a
+    >
+    <nav aria-label="メインナビゲーション" data-node-id="2001:6" data-name="shop-and-brand-navigation">
+      <ul class="flex items-center gap-8 text-sm font-body-caption leading-body-caption text-brand-accent whitespace-nowrap">
+        {
+          links.map((link) => (
+            <li data-node-id={link.id}>
+              <a href="#" class="hover:text-brand-accent-hover">{link.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div class="flex items-center gap-6 text-brand-accent" data-node-id="2001:11" data-name="account-and-cart">
+      <a href="#" aria-label="アカウント" data-node-id="2001:12" data-name="user-round">
+        <UserRound size={20} stroke-width={1.5} />
+      </a>
+      <a href="#" class="flex items-center gap-2" data-node-id="2001:14" data-name="cart">
+        <span data-node-id="2001:15" data-name="shopping-bag"><ShoppingBag size={20} stroke-width={1.5} /></span>
+        <span class="text-sm font-body-caption leading-body-caption" data-node-id="2001:17">カート</span>
+      </a>
+    </div>
+  </div>
+  <SectionRule nodeId="2001:18" />
+</header>

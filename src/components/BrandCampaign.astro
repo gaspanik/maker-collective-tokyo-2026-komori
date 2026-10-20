@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets'
+import campaignPhotograph from '@/assets/images/campaign-photograph.webp'
+import ActionButton from './ActionButton.astro'
+import TextLink from './TextLink.astro'
+---
+
+<section class="flex flex-col gap-8 px-16 pt-12 pb-24" data-node-id="2001:20" data-name="brand-campaign">
+  <div
+    class="flex items-center justify-between text-sm font-body-caption leading-body-caption text-brand-accent whitespace-nowrap"
+    data-node-id="2001:21"
+    data-name="campaign-introduction"
+  >
+    <p class="font-space-grotesk uppercase" data-node-id="2001:22">Essentials, with a reason.</p>
+    <p data-node-id="2001:23">日本発、サステナブルなベーシックウェア。</p>
+  </div>
+  <h1
+    class="text-6xl font-heading-hero leading-heading-hero text-brand-accent"
+    data-node-id="2001:24"
+  >
+    選ぶ理由が、見える服。
+  </h1>
+  <div class="flex items-end gap-16" data-node-id="2001:25" data-name="campaign-lead-and-actions">
+    <div class="flex w-156 flex-col gap-4" data-node-id="2001:26" data-name="brand-promise">
+      <p class="text-base font-body-regular leading-body-regular text-justify text-brand-accent" data-node-id="2001:27">
+        日々をともにする一着を、素材から、つくる背景から。長く着ることを大切にするあなたへ、LOOP THREADのベーシックを。
+      </p>
+      <TextLink
+        label="一着の背景をたどる"
+        nodeId="2001:28"
+        labelNodeId="2001:29"
+        arrowNodeId="2001:30"
+      />
+    </div>
+    <div class="flex flex-1 justify-end" data-node-id="2001:31" data-name="collection-action">
+      <ActionButton
+        label="コレクションを見る"
+        nodeId="2003:75"
+        labelNodeId="2001:33"
+        arrowNodeId="2001:34"
+      />
+    </div>
+  </div>
+  <figure class="contents">
+    <div class="relative h-136 w-full" data-node-id="2001:35" data-name="campaign-photograph">
+      <Image
+        src={campaignPhotograph}
+        alt="日差しの入るコンクリートの室内で、白いTシャツと濃色のパンツ姿で座るモデルと、深緑のスウェットとチャコールグレーのパンツ姿で立つモデル。"
+        class="absolute inset-0 size-full object-cover"
+        widths={[800, 1312, 1584]}
+        sizes="(min-width: 1440px) 1312px, 100vw"
+        loading="eager"
+      />
+    </div>
+    <figcaption
+      class="flex items-start justify-between text-sm font-body-caption leading-body-caption text-brand-accent whitespace-nowrap"
+      data-node-id="2001:36"
+      data-name="campaign-caption"
+    >
+      <span class="font-space-grotesk uppercase" data-node-id="2001:37">The everyday, considered.</span>
+      <span data-node-id="2001:38">商品画像はイメージです</span>
+    </figcaption>
+  </figure>
+</section>

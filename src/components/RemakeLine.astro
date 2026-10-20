@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets'
+import remakePhotograph from '@/assets/images/remake-concept-photograph.webp'
+import SectionIndex from './SectionIndex.astro'
+import TextLink from './TextLink.astro'
+---
+
+<section class="flex gap-16 px-16 py-24" data-node-id="2001:172" data-name="remake-line">
+  <div class="flex w-88 shrink-0 flex-col gap-8 self-start" data-node-id="2001:173" data-name="remake-introduction">
+    <div class="flex flex-col gap-8 text-brand-accent" data-node-id="2001:174" data-name="editorial-heading">
+      <SectionIndex
+        index="05"
+        label="Remake line"
+        nodeId="2001:175"
+        indexNodeId="2001:176"
+        labelNodeId="2001:177"
+      />
+      <h2 class="text-3xl font-heading-h1 leading-heading-h1" data-node-id="2001:178">
+        廃棄予定の生地を、<br />新しい一着へ。
+      </h2>
+      <p class="text-base font-body-regular leading-body-regular text-justify" data-node-id="2001:179">
+        まだ服になれる生地に、もう一度、出番を。廃棄予定の生地を使ったリメイクラインを、不定期で届けます。
+      </p>
+    </div>
+    <div class="self-start bg-brand-accent-2 px-4 py-2" data-node-id="2001:180" data-name="release-cadence">
+      <p
+        class="text-sm font-body-caption leading-body-caption text-brand-accent whitespace-nowrap"
+        data-node-id="2001:181"
+      >
+        不定期リリース
+      </p>
+    </div>
+    <TextLink
+      label="リメイクラインを知る"
+      nodeId="2001:182"
+      labelNodeId="2001:183"
+      arrowNodeId="2001:184"
+    />
+  </div>
+  <figure class="flex flex-1 flex-col gap-4" data-node-id="2001:185" data-name="remake-editorial">
+    <div class="relative h-112 w-full" data-node-id="2001:186" data-name="remake-concept-photograph">
+      <Image
+        src={remakePhotograph}
+        alt="作業台に広げた、深緑とチャコールグレーの布をつなぎ合わせた長袖スウェット。周囲に四角い布片が並ぶ。"
+        class="absolute inset-0 size-full object-cover"
+        widths={[600, 896, 1376]}
+        sizes="(min-width: 1440px) 896px, 60vw"
+      />
+    </div>
+    <figcaption
+      class="flex items-start justify-between text-sm font-body-caption leading-body-caption text-brand-accent whitespace-nowrap"
+      data-node-id="2001:187"
+      data-name="remake-caption"
+    >
+      <span class="font-space-grotesk uppercase" data-node-id="2001:188">A new chapter for fabric.</span>
+      <span data-node-id="2001:189">商品画像はイメージです</span>
+    </figcaption>
+  </figure>
+</section>

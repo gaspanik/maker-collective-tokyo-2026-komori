@@ -67,7 +67,7 @@ typography:
     fontWeight: 400
     lineHeight: 1.35
 rounded:
-  full: 9999px
+  none: 0px
 spacing:
   xs: 4px
   sm: 8px
@@ -79,7 +79,7 @@ components:
     backgroundColor: "{colors.secondary}"
     textColor: "{colors.primary}"
     typography: "{typography.label-action}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.none}"
     padding: 16px
   button-primary-hover:
     backgroundColor: "{colors.secondary-hover}"
@@ -89,7 +89,7 @@ components:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.surface}"
     typography: "{typography.label-action}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.none}"
     padding: 16px
   button-dark-hover:
     backgroundColor: "{colors.primary-hover}"
@@ -126,7 +126,7 @@ LOOP THREAD は、古着の回収と再生をテーマにした循環型ファ�
 
 ## Shapes
 
-ボタンは完全な丸み（pill）。写真は大きな矩形で、コンセプト画像であることを示す注記を添える。
+ボタンは角丸なしの矩形。写真は大きな矩形で、コンセプト画像であることを示す注記を添える。
 
 ## Components
 

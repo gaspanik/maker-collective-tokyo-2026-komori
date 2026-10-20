@@ -1,0 +1,31 @@
+---
+interface Props {
+  href?: string
+  label: string
+  tone?: 'dark' | 'accent'
+  nodeId?: string
+  labelNodeId?: string
+  arrowNodeId?: string
+}
+
+const { href = '#', label, tone = 'dark', nodeId, labelNodeId, arrowNodeId } = Astro.props
+---
+
+<a
+  href={href}
+  class:list={[
+    'inline-flex h-14 items-center gap-8 px-6 whitespace-nowrap',
+    tone === 'dark'
+      ? 'bg-brand-accent text-base-white hover:bg-brand-accent-hover active:bg-brand-accent-pressed'
+      : 'bg-brand-accent-2 text-brand-accent hover:bg-brand-accent-2-hover active:bg-brand-accent-2-pressed',
+  ]}
+  data-node-id={nodeId}
+  data-name="primary-action"
+>
+  <span class="text-base font-label-action leading-label-action" data-node-id={labelNodeId}>{label}</span>
+  <span
+    class="font-space-grotesk text-lg font-body-arrow leading-body-arrow"
+    aria-hidden="true"
+    data-node-id={arrowNodeId}>↗</span
+  >
+</a>

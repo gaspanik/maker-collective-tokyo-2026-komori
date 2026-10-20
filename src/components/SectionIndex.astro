@@ -1,0 +1,22 @@
+---
+interface Props {
+  index: string
+  label: string
+  tone?: 'light' | 'dark'
+  nodeId?: string
+  indexNodeId?: string
+  labelNodeId?: string
+}
+
+const { index, label, tone = 'light', nodeId, indexNodeId, labelNodeId } = Astro.props
+const dark = tone === 'dark'
+---
+
+<div
+  class="flex items-center gap-4 font-space-grotesk text-sm font-label-overline leading-label-overline whitespace-nowrap"
+  data-node-id={nodeId}
+  data-name="section-index"
+>
+  <span class:list={[dark ? 'text-brand-accent-2' : 'text-brand-accent']} data-node-id={indexNodeId}>{index}</span>
+  <span class:list={['uppercase', dark ? 'text-base-white' : 'text-brand-accent']} data-node-id={labelNodeId}>{label}</span>
+</div>

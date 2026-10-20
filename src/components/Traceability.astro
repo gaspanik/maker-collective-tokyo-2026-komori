@@ -1,0 +1,115 @@
+---
+import ActionButton from './ActionButton.astro'
+import SectionIndex from './SectionIndex.astro'
+import SectionRule from './SectionRule.astro'
+
+const fields = [
+  {
+    id: '2001:150',
+    infoId: '2001:151',
+    nameWrapId: '2001:152',
+    labelId: '2001:153',
+    nameId: '2001:154',
+    meaningId: '2001:155',
+    ruleId: '2001:156',
+    label: 'Country',
+    name: '生産国',
+    meaning: 'どこでつくられた一着なのか。',
+  },
+  {
+    id: '2001:157',
+    infoId: '2001:158',
+    nameWrapId: '2001:159',
+    labelId: '2001:160',
+    nameId: '2001:161',
+    meaningId: '2001:162',
+    ruleId: '2001:163',
+    label: 'Process',
+    name: '生産工程',
+    meaning: '工場から店頭まで、どのように届くのか。',
+  },
+  {
+    id: '2001:164',
+    infoId: '2001:165',
+    nameWrapId: '2001:166',
+    labelId: '2001:167',
+    nameId: '2001:168',
+    meaningId: '2001:169',
+    ruleId: '2001:170',
+    label: 'Emissions',
+    name: 'CO₂排出量',
+    meaning: 'その一着の環境への影響を知る。',
+  },
+]
+---
+
+<section
+  class="flex gap-16 bg-brand-accent px-16 py-24 text-base-white"
+  data-node-id="2001:135"
+  data-name="traceability"
+>
+  <div class="flex w-88 shrink-0 flex-col gap-12 self-start" data-node-id="2001:136" data-name="traceability-introduction">
+    <div class="flex flex-col gap-8" data-node-id="2001:137" data-name="editorial-heading">
+      <SectionIndex
+        index="04"
+        label="Trace the thread"
+        tone="dark"
+        nodeId="2001:138"
+        indexNodeId="2001:139"
+        labelNodeId="2001:140"
+      />
+      <h2 class="text-3xl font-heading-h1 leading-heading-h1" data-node-id="2001:141">
+        つくる過程まで、<br />選ぶ。
+      </h2>
+      <p class="text-base font-body-regular leading-body-regular text-justify" data-node-id="2001:142">
+        見た目や着心地だけでなく、その背景も選ぶ理由に。工場から店頭までのトレーサビリティを、商品ページで開示します。
+      </p>
+    </div>
+    <div>
+      <ActionButton
+        label="生産背景を知る"
+        tone="accent"
+        nodeId="2003:78"
+        labelNodeId="I2003:78;2003:95"
+        arrowNodeId="I2003:78;2003:96"
+      />
+    </div>
+  </div>
+  <div class="flex flex-1 flex-col gap-8" data-node-id="2001:146" data-name="disclosure-taxonomy">
+    <p class="text-xl font-heading-h3 leading-heading-h3" data-node-id="2001:147">
+      一着ごとに、確かめられること。
+    </p>
+    <div class="flex flex-col" data-node-id="2001:148" data-name="disclosure-list">
+      <SectionRule tone="light" nodeId="2001:149" />
+      {
+        fields.map((f) => (
+          <div class="flex flex-col" data-node-id={f.id} data-name="disclosure-field">
+            <div class="flex items-center gap-8 py-6" data-node-id={f.infoId} data-name="disclosure-information">
+              <div class="flex w-66 shrink-0 flex-col gap-2 leading-body-display" data-node-id={f.nameWrapId} data-name="disclosure-name">
+                <p
+                  class="font-space-grotesk text-sm font-body-caption-latin leading-body-caption-latin text-brand-accent-2 uppercase"
+                  data-node-id={f.labelId}
+                >
+                  {f.label}
+                </p>
+                <h3 class="text-2xl font-body-display leading-body-display" data-node-id={f.nameId}>
+                  {f.name}
+                </h3>
+              </div>
+              <p
+                class="flex-1 text-base font-body-regular leading-body-regular text-justify"
+                data-node-id={f.meaningId}
+              >
+                {f.meaning}
+              </p>
+            </div>
+            <SectionRule tone="light" nodeId={f.ruleId} />
+          </div>
+        ))
+      }
+    </div>
+    <p class="text-base font-body-regular leading-body-regular text-justify" data-node-id="2001:171">
+      生産国・工程・CO₂排出量の詳細は、各商品ページでご確認ください。
+    </p>
+  </div>
+</section>

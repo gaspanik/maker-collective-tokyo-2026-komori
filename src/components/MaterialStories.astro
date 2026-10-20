@@ -1,0 +1,100 @@
+---
+import { Image } from 'astro:assets'
+import cotton from '@/assets/images/material-organic-cotton.webp'
+import polyester from '@/assets/images/material-recycled-polyester.webp'
+import SectionIndex from './SectionIndex.astro'
+import SectionRule from './SectionRule.astro'
+
+const stories = [
+  {
+    id: '2003:176',
+    p: 'I2003:176',
+    tag: 'Organic cotton',
+    name: 'オーガニックコットン',
+    body: '毎日、肌にふれるものだから。LOOP THREADが選ぶ素材のひとつ、オーガニックコットン。ベーシックウェアを、素材から見つめます。',
+    src: cotton,
+    alt: 'ゆるやかに波打つ白い生地の接写。細かな織り目と柔らかなひだが見える。',
+  },
+  {
+    id: '2003:184',
+    p: 'I2003:184',
+    tag: 'Recycled polyester',
+    name: '再生ポリエステル',
+    body: '素材の選択肢を、これからの視点で。もうひとつの素材は、再生ポリエステル。日常の服に使う素材を、丁寧に選んでいます。',
+    src: polyester,
+    alt: '折り返されたチャコールグレーの生地の接写。細かな編み目が見える。',
+  },
+]
+---
+
+<section class="flex flex-col gap-12 px-16 pb-24" data-node-id="2001:108" data-name="material-stories">
+  <SectionRule nodeId="2001:109" />
+  <div class="flex gap-16" data-node-id="2001:110" data-name="material-editorial">
+    <div
+      class="flex w-88 shrink-0 flex-col gap-8 self-start text-brand-accent"
+      data-node-id="2001:111"
+      data-name="editorial-heading"
+    >
+      <SectionIndex
+        index="03"
+        label="Two materials"
+        nodeId="2001:112"
+        indexNodeId="2001:113"
+        labelNodeId="2001:114"
+      />
+      <h2 class="text-3xl font-heading-h1 leading-heading-h1" data-node-id="2001:115">
+        素材を選ぶ。<br />毎日を考える。
+      </h2>
+      <p class="text-base font-body-regular leading-body-regular text-justify" data-node-id="2001:116">
+        使うのは、オーガニックコットンと再生ポリエステルのみ。飾りすぎず、素材と向き合う服づくりを。
+      </p>
+    </div>
+    <div class="flex flex-1 flex-col gap-8" data-node-id="2001:117" data-name="texture-stories">
+      {
+        stories.map((s) => (
+          <article class="flex flex-col gap-8" data-node-id={s.id} data-name="material-story">
+            <div class="flex gap-8" data-node-id={`${s.p};2001:119`} data-name="texture-and-copy">
+              <div class="relative h-66 w-96 shrink-0" data-node-id={`${s.p};2001:120`} data-name="material-texture">
+                <Image
+                  src={s.src}
+                  alt={s.alt}
+                  class="absolute inset-0 size-full object-cover"
+                  widths={[400, 768]}
+                  sizes="(min-width: 1440px) 384px, 40vw"
+                />
+              </div>
+              <div
+                class="flex flex-1 flex-col gap-6 pt-2 text-brand-accent"
+                data-node-id={`${s.p};2001:121`}
+                data-name="material-information"
+              >
+                <p
+                  class="font-space-grotesk text-sm font-body-caption-latin leading-body-caption-latin uppercase"
+                  data-node-id={`${s.p};2001:122`}
+                >
+                  {s.tag}
+                </p>
+                <h3
+                  class="text-xl font-heading-h3 leading-heading-h3"
+                  data-node-id={`${s.p};2001:123`}
+                >
+                  {s.name}
+                </h3>
+                <p
+                  class="text-base font-body-regular leading-body-regular text-justify"
+                  data-node-id={`${s.p};2001:124`}
+                >
+                  {s.body}
+                </p>
+              </div>
+            </div>
+            <SectionRule nodeId={`${s.p};2001:125`} />
+          </article>
+        ))
+      }
+      <p class="text-sm font-body-caption leading-body-caption text-brand-accent" data-node-id="2001:134">
+        素材写真はイメージです
+      </p>
+    </div>
+  </div>
+</section>

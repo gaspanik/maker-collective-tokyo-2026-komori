@@ -1,0 +1,108 @@
+---
+import SectionRule from './SectionRule.astro'
+
+const groups = [
+  {
+    id: '2001:214',
+    headingId: '2001:215',
+    heading: 'Shop',
+    links: [
+      ['すべての商品', '2001:216'],
+      ['Tシャツ', '2001:217'],
+      ['スウェット', '2001:218'],
+      ['アウター', '2001:219'],
+      ['コレクション', '2001:220'],
+    ],
+  },
+  {
+    id: '2001:221',
+    headingId: '2001:222',
+    heading: 'About',
+    links: [
+      ['私たちについて', '2001:223'],
+      ['素材について', '2001:224'],
+      ['生産背景', '2001:225'],
+      ['リメイクライン', '2001:226'],
+      ['古着回収プログラム', '2001:227'],
+    ],
+  },
+  {
+    id: '2001:228',
+    headingId: '2001:229',
+    heading: 'Support',
+    links: [
+      ['ご利用ガイド', '2001:230'],
+      ['配送・返品について', '2001:231'],
+      ['よくあるご質問', '2001:232'],
+      ['お問い合わせ', '2001:233'],
+      ['マイアカウント', '2001:234'],
+    ],
+  },
+]
+const legal = [
+  ['プライバシーポリシー', '2001:240'],
+  ['利用規約', '2001:241'],
+  ['特定商取引法に基づく表記', '2001:242'],
+]
+---
+
+<footer
+  class="flex flex-col gap-12 bg-brand-accent px-16 pt-16 pb-8 text-base-white"
+  data-node-id="2003:39"
+  data-name="footer"
+>
+  <div class="flex gap-16" data-node-id="2001:209" data-name="footer-navigation">
+    <div class="flex w-88 shrink-0 flex-col gap-6" data-node-id="2001:210" data-name="brand-closing-statement">
+      <p class="text-xl font-heading-h3 leading-heading-h3" data-node-id="2001:211">
+        選ぶ理由を、<br />着るよろこびに。
+      </p>
+      <p class="text-sm font-body-caption leading-body-caption" data-node-id="2001:212">
+        日本発のサステナブルアパレル
+      </p>
+    </div>
+    <div class="grid flex-1 grid-cols-3 gap-6" data-node-id="2001:213" data-name="footer-link-groups">
+      {
+        groups.map((g) => (
+          <nav aria-label={g.heading} class="flex flex-col gap-4" data-node-id={g.id} data-name="navigation-group">
+            <p
+              class="font-space-grotesk text-sm font-body-caption-latin leading-body-caption-latin text-brand-accent-2 uppercase"
+              data-node-id={g.headingId}
+            >
+              {g.heading}
+            </p>
+            <ul class="flex flex-col gap-4 text-base font-body-link leading-body-link">
+              {g.links.map(([label, id]) => (
+                <li data-node-id={id}>
+                  <a href="#" class="hover:underline">{label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ))
+      }
+    </div>
+  </div>
+  <SectionRule tone="light" nodeId="2001:235" />
+  <p
+    class="font-space-grotesk text-8xl font-heading-brand-large leading-heading-brand-large"
+    data-node-id="2001:236"
+  >
+    LOOP THREAD
+  </p>
+  <div
+    class="flex items-center justify-between text-sm font-body-caption leading-body-caption whitespace-nowrap"
+    data-node-id="2001:237"
+    data-name="legal-navigation"
+  >
+    <p class="font-space-grotesk font-body-caption-latin leading-body-caption-latin" data-node-id="2001:238">© LOOP THREAD</p>
+    <ul class="flex items-start gap-8" data-node-id="2001:239" data-name="legal-links">
+      {
+        legal.map(([label, id]) => (
+          <li data-node-id={id}>
+            <a href="#" class="hover:underline">{label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>

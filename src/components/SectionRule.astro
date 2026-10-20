@@ -1,0 +1,16 @@
+---
+interface Props {
+  tone?: 'dark' | 'light'
+  nodeId?: string
+}
+
+const { tone = 'dark', nodeId } = Astro.props
+---
+
+<div
+  class:list={['h-px w-full shrink-0', tone === 'dark' ? 'bg-brand-accent' : 'bg-base-white']}
+  data-node-id={nodeId}
+  data-name="section-rule"
+  aria-hidden="true"
+>
+</div>

@@ -1,8 +1,28 @@
 ---
-import Welcome from "@/components/Welcome.astro";
-import Layout from "@/layouts/Layout.astro";
+import BrandCampaign from '@/components/BrandCampaign.astro'
+import CategoryBrowse from '@/components/CategoryBrowse.astro'
+import CollectionOverview from '@/components/CollectionOverview.astro'
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import MaterialStories from '@/components/MaterialStories.astro'
+import RemakeLine from '@/components/RemakeLine.astro'
+import Traceability from '@/components/Traceability.astro'
+import UsedClothingProgram from '@/components/UsedClothingProgram.astro'
+import Layout from '@/layouts/Layout.astro'
 ---
 
-<Layout title="Home - Astro 7 + Tailwind CSS 4 Starter">
-  <Welcome />
+<Layout title="LOOP THREAD | 選ぶ理由が、見える服。">
+  <div class="mx-auto w-full max-w-360" data-node-id="2001:2" data-name="LOOP THREAD - Optimized">
+    <Header />
+    <main data-node-id="2001:19" data-name="editorial-content">
+      <BrandCampaign />
+      <CategoryBrowse />
+      <CollectionOverview />
+      <MaterialStories />
+      <Traceability />
+      <RemakeLine />
+      <UsedClothingProgram />
+    </main>
+    <Footer />
+  </div>
 </Layout>
