@@ -1,0 +1,13 @@
+---
+interface Props {
+  nodeId?: string
+}
+
+const { nodeId } = Astro.props
+---
+
+<span
+  class="font-space-grotesk text-sm font-body-arrow leading-6.75"
+  aria-hidden="true"
+  data-node-id={nodeId}>↗</span
+>

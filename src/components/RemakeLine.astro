@@ -1,12 +1,14 @@
 ---
-import { Image } from 'astro:assets'
 import remakePhotograph from '@/assets/images/remake-concept-photograph.webp'
+import ImageFrame from './ImageFrame.astro'
+import PhotoCaption from './PhotoCaption.astro'
+import SectionAside from './SectionAside.astro'
 import SectionIndex from './SectionIndex.astro'
 import TextLink from './TextLink.astro'
 ---
 
-<section class="flex flex-col gap-8 lg:flex-row lg:gap-16 px-4 md:px-8 lg:px-16 py-12 md:py-16 lg:py-24" data-node-id="2001:172" data-name="remake-line">
-  <div class="flex w-full lg:w-88 lg:shrink-0 flex-col gap-8 lg:self-start" data-node-id="2001:173" data-name="remake-introduction">
+<section class="flex flex-col gap-8 lg:flex-row lg:gap-16 px-page py-section" data-node-id="2001:172" data-name="remake-line">
+  <SectionAside class="gap-8 lg:self-start" nodeId="2001:173" name="remake-introduction">
     <div class="flex flex-col gap-8 text-brand-accent" data-node-id="2001:174" data-name="editorial-heading">
       <SectionIndex
         index="05"
@@ -15,16 +17,16 @@ import TextLink from './TextLink.astro'
         indexNodeId="2001:176"
         labelNodeId="2001:177"
       />
-      <h2 class="text-2xl lg:text-3xl font-heading-h1 leading-heading-h1" data-node-id="2001:178">
+      <h2 class="type-section-heading" data-node-id="2001:178">
         廃棄予定の生地を、<br />新しい一着へ。
       </h2>
-      <p class="text-base font-body-regular leading-body-regular text-justify" data-node-id="2001:179">
+      <p class="type-body" data-node-id="2001:179">
         まだ服になれる生地に、もう一度、出番を。廃棄予定の生地を使ったリメイクラインを、不定期で届けます。
       </p>
     </div>
     <div class="self-start bg-brand-accent-2 px-4 py-2" data-node-id="2001:180" data-name="release-cadence">
       <p
-        class="text-sm font-body-caption leading-body-caption text-brand-accent whitespace-nowrap"
+        class="type-caption text-brand-accent whitespace-nowrap"
         data-node-id="2001:181"
       >
         不定期リリース
@@ -36,24 +38,23 @@ import TextLink from './TextLink.astro'
       labelNodeId="2001:183"
       arrowNodeId="2001:184"
     />
-  </div>
+  </SectionAside>
   <figure class="flex flex-1 flex-col gap-4" data-node-id="2001:185" data-name="remake-editorial">
-    <div class="relative h-64 w-full md:h-96 lg:h-112" data-node-id="2001:186" data-name="remake-concept-photograph">
-      <Image
-        src={remakePhotograph}
-        alt="作業台に広げた、深緑とチャコールグレーの布をつなぎ合わせた長袖スウェット。周囲に四角い布片が並ぶ。"
-        class="absolute inset-0 size-full object-cover"
-        widths={[600, 896, 1376]}
-        sizes="(min-width: 1440px) 896px, 60vw"
-      />
-    </div>
-    <figcaption
-      class="flex flex-wrap items-start justify-between gap-x-4 text-sm font-body-caption leading-body-caption text-brand-accent"
-      data-node-id="2001:187"
-      data-name="remake-caption"
-    >
-      <span class="font-space-grotesk uppercase" data-node-id="2001:188">A new chapter for fabric.</span>
-      <span data-node-id="2001:189">商品画像はイメージです</span>
-    </figcaption>
+    <ImageFrame
+      src={remakePhotograph}
+      alt="作業台に広げた、深緑とチャコールグレーの布をつなぎ合わせた長袖スウェット。周囲に四角い布片が並ぶ。"
+      frameClass="h-64 md:h-96 lg:h-112"
+      widths={[600, 896, 1376]}
+      sizes="(min-width: 1440px) 896px, 60vw"
+      nodeId="2001:186"
+      name="remake-concept-photograph"
+    />
+    <PhotoCaption
+      latin="A new chapter for fabric."
+      nodeId="2001:187"
+      name="remake-caption"
+      latinNodeId="2001:188"
+      noteNodeId="2001:189"
+    />
   </figure>
 </section>

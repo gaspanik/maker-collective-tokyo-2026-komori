@@ -75,3 +75,33 @@
     font-family: var(--heading-font-family);
   }
 }
+
+/* Text styles (Figma Text Styles) */
+@utility type-body {
+  @apply text-base font-body-regular leading-body-regular text-justify;
+}
+
+@utility type-caption {
+  @apply text-sm font-body-caption leading-body-caption;
+}
+
+@utility type-eyebrow {
+  @apply font-space-grotesk text-sm font-body-caption-latin leading-body-caption-latin uppercase;
+}
+
+@utility type-section-heading {
+  @apply text-2xl lg:text-3xl font-heading-h1 leading-heading-h1;
+}
+
+/* Page layout rhythm */
+@utility px-page {
+  @apply px-4 md:px-8 lg:px-16;
+}
+
+@utility pb-section {
+  @apply pb-12 md:pb-16 lg:pb-24;
+}
+
+@utility py-section {
+  @apply py-12 md:py-16 lg:py-24;
+}

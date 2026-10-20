@@ -1,8 +1,9 @@
 ---
-import { Image } from 'astro:assets'
 import tShirt from '@/assets/images/product-t-shirt.webp'
 import sweatshirt from '@/assets/images/product-sweatshirt.webp'
 import outerwear from '@/assets/images/product-outerwear.webp'
+import ImageFrame from './ImageFrame.astro'
+import SectionAside from './SectionAside.astro'
 import SectionIndex from './SectionIndex.astro'
 import SectionRule from './SectionRule.astro'
 import TextLink from './TextLink.astro'
@@ -35,14 +36,10 @@ const products = [
 ]
 ---
 
-<section class="flex flex-col gap-12 px-4 md:px-8 lg:px-16 pb-12 md:pb-16 lg:pb-24" data-node-id="2001:66" data-name="collection-overview">
+<section class="flex flex-col gap-12 px-page pb-section" data-node-id="2001:66" data-name="collection-overview">
   <SectionRule nodeId="2001:67" />
   <div class="flex flex-col gap-8 lg:flex-row lg:gap-16" data-node-id="2001:68" data-name="collection-editorial">
-    <div
-      class="flex w-full lg:w-88 lg:shrink-0 flex-col gap-8 lg:self-start text-brand-accent"
-      data-node-id="2001:69"
-      data-name="collection-heading-and-details"
-    >
+    <SectionAside class="gap-8 lg:self-start text-brand-accent" nodeId="2001:69" name="collection-heading-and-details">
       <div class="flex flex-col gap-8" data-node-id="2001:70" data-name="editorial-heading">
         <SectionIndex
           index="02"
@@ -51,17 +48,17 @@ const products = [
           indexNodeId="2001:72"
           labelNodeId="2001:73"
         />
-        <h2 class="text-2xl lg:text-3xl font-heading-h1 leading-heading-h1" data-node-id="2001:74">
+        <h2 class="type-section-heading" data-node-id="2001:74">
           着るほどに、<br />自分の定番へ。
         </h2>
-        <p class="text-base font-body-regular leading-body-regular text-justify" data-node-id="2001:75">
+        <p class="type-body" data-node-id="2001:75">
           Tシャツ、スウェット、アウター。品質と長く着ることを大切にした、日々のためのベーシックウェア。
         </p>
       </div>
-      <p class="text-sm font-body-caption leading-body-caption" data-node-id="2001:76">
+      <p class="type-caption" data-node-id="2001:76">
         価格帯 ¥6,000〜¥28,000
       </p>
-      <p class="text-base font-body-regular leading-body-regular text-justify" data-node-id="2001:77">
+      <p class="type-body" data-node-id="2001:77">
         季節ごとの新作コレクションも、ここから。
       </p>
       <TextLink
@@ -70,23 +67,23 @@ const products = [
         labelNodeId="2001:79"
         arrowNodeId="2001:80"
       />
-    </div>
+    </SectionAside>
     <div class="flex flex-1 flex-col gap-6" data-node-id="2001:81" data-name="product-overview">
       <ul class="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6" data-node-id="2001:82" data-name="product-list">
         {
           products.map((p) => (
             <li class="flex flex-col gap-4 text-brand-accent" data-node-id={p.id} data-name="product-card">
-              <div class="relative h-90 w-full" data-node-id={`${p.p};2001:84`} data-name="product-concept-photograph">
-                <Image
-                  src={p.src}
-                  alt={p.alt}
-                  class="absolute inset-0 size-full object-cover"
-                  widths={[400, 800]}
-                  sizes="(min-width: 1440px) 283px, 33vw"
-                />
-              </div>
+              <ImageFrame
+                src={p.src}
+                alt={p.alt}
+                frameClass="h-90"
+                widths={[400, 800]}
+                sizes="(min-width: 1440px) 283px, 33vw"
+                nodeId={`${p.p};2001:84`}
+                name="product-concept-photograph"
+              />
               <p
-                class="font-space-grotesk text-sm font-body-caption-latin leading-body-caption-latin uppercase"
+                class="type-eyebrow"
                 data-node-id={`${p.p};2001:85`}
               >
                 {p.tag}
@@ -108,7 +105,7 @@ const products = [
           ))
         }
       </ul>
-      <p class="text-sm font-body-caption leading-body-caption text-brand-accent" data-node-id="2001:107">
+      <p class="type-caption text-brand-accent" data-node-id="2001:107">
         商品画像はイメージです
       </p>
     </div>

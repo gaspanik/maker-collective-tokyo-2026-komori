@@ -1,0 +1,17 @@
+---
+interface Props {
+  class?: string
+  nodeId?: string
+  name?: string
+}
+
+const { class: className, nodeId, name } = Astro.props
+---
+
+<div
+  class:list={['flex w-full flex-col lg:w-88 lg:shrink-0', className]}
+  data-node-id={nodeId}
+  data-name={name}
+>
+  <slot />
+</div>

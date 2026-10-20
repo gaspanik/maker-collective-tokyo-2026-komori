@@ -1,4 +1,6 @@
 ---
+import Arrow from './Arrow.astro'
+
 interface Props {
   href?: string
   label: string
@@ -23,9 +25,5 @@ const { href = '#', label, tone = 'dark', nodeId, labelNodeId, arrowNodeId } = A
   data-name="primary-action"
 >
   <span class="text-base font-label-action leading-label-action" data-node-id={labelNodeId}>{label}</span>
-  <span
-    class="font-space-grotesk text-sm font-body-arrow leading-6.75"
-    aria-hidden="true"
-    data-node-id={arrowNodeId}>↗</span
-  >
+  <Arrow nodeId={arrowNodeId} />
 </a>

@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets'
+import type { ComponentProps } from 'astro/types'
+
+type Props = ComponentProps<typeof Image> & {
+  frameClass?: string
+  nodeId?: string
+  name?: string
+}
+
+const { frameClass, nodeId, name, class: imageClass, ...imageProps } = Astro.props
+---
+
+<div
+  class:list={['relative w-full', frameClass]}
+  data-node-id={nodeId}
+  data-name={name}
+>
+  <Image
+    {...imageProps}
+    class:list={['absolute inset-0 size-full object-cover', imageClass]}
+  />
+</div>

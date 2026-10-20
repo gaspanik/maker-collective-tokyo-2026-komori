@@ -1,0 +1,28 @@
+---
+interface Props {
+  latin: string
+  note?: string
+  nodeId?: string
+  name?: string
+  latinNodeId?: string
+  noteNodeId?: string
+}
+
+const {
+  latin,
+  note = '商品画像はイメージです',
+  nodeId,
+  name,
+  latinNodeId,
+  noteNodeId,
+} = Astro.props
+---
+
+<figcaption
+  class="type-caption flex flex-wrap items-start justify-between gap-x-4 text-brand-accent"
+  data-node-id={nodeId}
+  data-name={name}
+>
+  <span class="font-space-grotesk uppercase" data-node-id={latinNodeId}>{latin}</span>
+  <span data-node-id={noteNodeId}>{note}</span>
+</figcaption>

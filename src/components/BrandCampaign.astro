@@ -1,13 +1,14 @@
 ---
-import { Image } from 'astro:assets'
 import campaignPhotograph from '@/assets/images/campaign-photograph.webp'
 import ActionButton from './ActionButton.astro'
+import ImageFrame from './ImageFrame.astro'
+import PhotoCaption from './PhotoCaption.astro'
 import TextLink from './TextLink.astro'
 ---
 
 <section class="flex flex-col gap-8 px-16 pt-12 pb-24" data-node-id="2001:20" data-name="brand-campaign">
   <div
-    class="flex flex-col gap-1 text-sm font-body-caption leading-body-caption text-brand-accent sm:flex-row sm:items-center sm:justify-between"
+    class="flex flex-col gap-1 type-caption text-brand-accent sm:flex-row sm:items-center sm:justify-between"
     data-node-id="2001:21"
     data-name="campaign-introduction"
   >
@@ -22,7 +23,7 @@ import TextLink from './TextLink.astro'
   </h1>
   <div class="flex flex-col items-start gap-8 lg:flex-row lg:items-end lg:gap-16" data-node-id="2001:25" data-name="campaign-lead-and-actions">
     <div class="flex w-full flex-col gap-4 lg:w-156" data-node-id="2001:26" data-name="brand-promise">
-      <p class="text-base font-body-regular leading-body-regular text-justify text-brand-accent" data-node-id="2001:27">
+      <p class="type-body text-brand-accent" data-node-id="2001:27">
         日々をともにする一着を、素材から、つくる背景から。長く着ることを大切にするあなたへ、LOOP THREADのベーシックを。
       </p>
       <TextLink
@@ -42,23 +43,22 @@ import TextLink from './TextLink.astro'
     </div>
   </div>
   <figure class="contents">
-    <div class="relative h-64 w-full md:h-96 lg:h-136" data-node-id="2001:35" data-name="campaign-photograph">
-      <Image
-        src={campaignPhotograph}
-        alt="日差しの入るコンクリートの室内で、白いTシャツと濃色のパンツ姿で座るモデルと、深緑のスウェットとチャコールグレーのパンツ姿で立つモデル。"
-        class="absolute inset-0 size-full object-cover"
-        widths={[800, 1312, 1584]}
-        sizes="(min-width: 1440px) 1312px, 100vw"
-        loading="eager"
-      />
-    </div>
-    <figcaption
-      class="flex flex-wrap items-start justify-between gap-x-4 text-sm font-body-caption leading-body-caption text-brand-accent"
-      data-node-id="2001:36"
-      data-name="campaign-caption"
-    >
-      <span class="font-space-grotesk uppercase" data-node-id="2001:37">The everyday, considered.</span>
-      <span data-node-id="2001:38">商品画像はイメージです</span>
-    </figcaption>
+    <ImageFrame
+      src={campaignPhotograph}
+      alt="日差しの入るコンクリートの室内で、白いTシャツと濃色のパンツ姿で座るモデルと、深緑のスウェットとチャコールグレーのパンツ姿で立つモデル。"
+      frameClass="h-64 md:h-96 lg:h-136"
+      widths={[800, 1312, 1584]}
+      sizes="(min-width: 1440px) 1312px, 100vw"
+      loading="eager"
+      nodeId="2001:35"
+      name="campaign-photograph"
+    />
+    <PhotoCaption
+      latin="The everyday, considered."
+      nodeId="2001:36"
+      name="campaign-caption"
+      latinNodeId="2001:37"
+      noteNodeId="2001:38"
+    />
   </figure>
 </section>

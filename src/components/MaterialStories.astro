@@ -1,7 +1,8 @@
 ---
-import { Image } from 'astro:assets'
 import cotton from '@/assets/images/material-organic-cotton.webp'
 import polyester from '@/assets/images/material-recycled-polyester.webp'
+import ImageFrame from './ImageFrame.astro'
+import SectionAside from './SectionAside.astro'
 import SectionIndex from './SectionIndex.astro'
 import SectionRule from './SectionRule.astro'
 
@@ -27,14 +28,10 @@ const stories = [
 ]
 ---
 
-<section class="flex flex-col gap-12 px-4 md:px-8 lg:px-16 pb-12 md:pb-16 lg:pb-24" data-node-id="2001:108" data-name="material-stories">
+<section class="flex flex-col gap-12 px-page pb-section" data-node-id="2001:108" data-name="material-stories">
   <SectionRule nodeId="2001:109" />
   <div class="flex flex-col gap-8 lg:flex-row lg:gap-16" data-node-id="2001:110" data-name="material-editorial">
-    <div
-      class="flex w-full lg:w-88 lg:shrink-0 flex-col gap-8 lg:self-start text-brand-accent"
-      data-node-id="2001:111"
-      data-name="editorial-heading"
-    >
+    <SectionAside class="gap-8 lg:self-start text-brand-accent" nodeId="2001:111" name="editorial-heading">
       <SectionIndex
         index="03"
         label="Two materials"
@@ -42,34 +39,34 @@ const stories = [
         indexNodeId="2001:113"
         labelNodeId="2001:114"
       />
-      <h2 class="text-2xl lg:text-3xl font-heading-h1 leading-heading-h1" data-node-id="2001:115">
+      <h2 class="type-section-heading" data-node-id="2001:115">
         素材を選ぶ。<br />毎日を考える。
       </h2>
-      <p class="text-base font-body-regular leading-body-regular text-justify" data-node-id="2001:116">
+      <p class="type-body" data-node-id="2001:116">
         使うのは、オーガニックコットンと再生ポリエステルのみ。飾りすぎず、素材と向き合う服づくりを。
       </p>
-    </div>
+    </SectionAside>
     <div class="flex flex-1 flex-col gap-8" data-node-id="2001:117" data-name="texture-stories">
       {
         stories.map((s) => (
           <article class="flex flex-col gap-8" data-node-id={s.id} data-name="material-story">
             <div class="flex flex-col gap-4 md:flex-row md:gap-8" data-node-id={`${s.p};2001:119`} data-name="texture-and-copy">
-              <div class="relative h-56 w-full shrink-0 md:h-66 md:w-96" data-node-id={`${s.p};2001:120`} data-name="material-texture">
-                <Image
-                  src={s.src}
-                  alt={s.alt}
-                  class="absolute inset-0 size-full object-cover"
-                  widths={[400, 768]}
-                  sizes="(min-width: 1440px) 384px, 40vw"
-                />
-              </div>
+              <ImageFrame
+                src={s.src}
+                alt={s.alt}
+                frameClass="h-56 shrink-0 md:h-66 md:w-96"
+                widths={[400, 768]}
+                sizes="(min-width: 1440px) 384px, 40vw"
+                nodeId={`${s.p};2001:120`}
+                name="material-texture"
+              />
               <div
                 class="flex flex-1 flex-col gap-6 pt-2 text-brand-accent"
                 data-node-id={`${s.p};2001:121`}
                 data-name="material-information"
               >
                 <p
-                  class="font-space-grotesk text-sm font-body-caption-latin leading-body-caption-latin uppercase"
+                  class="type-eyebrow"
                   data-node-id={`${s.p};2001:122`}
                 >
                   {s.tag}
@@ -81,7 +78,7 @@ const stories = [
                   {s.name}
                 </h3>
                 <p
-                  class="text-base font-body-regular leading-body-regular text-justify"
+                  class="type-body"
                   data-node-id={`${s.p};2001:124`}
                 >
                   {s.body}
@@ -92,7 +89,7 @@ const stories = [
           </article>
         ))
       }
-      <p class="text-sm font-body-caption leading-body-caption text-brand-accent" data-node-id="2001:134">
+      <p class="type-caption text-brand-accent" data-node-id="2001:134">
         素材写真はイメージです
       </p>
     </div>
