@@ -1,10 +1,68 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300..700&display=swap"); */
 @import "tailwindcss";
 
 @theme {
-  /* --default-font-family: "Noto Sans JP", sans-serif; */
-  --default-font-family: "Gen Interface JP", sans-serif;
-  --heading-font-family: "Gen Interface JP Display", sans-serif;
+  --default-font-family: "Noto Sans JP", sans-serif;
+  --heading-font-family: "Noto Sans JP", sans-serif;
+
+  /* Color */
+  --color-base-white: #ffffff;
+  --color-brand-accent: #163d35;
+  --color-brand-accent-hover: #1d5247;
+  --color-brand-accent-pressed: #112e28;
+  --color-brand-accent-2: #d5ed75;
+  --color-brand-accent-2-hover: #cdea5c;
+  --color-brand-accent-2-pressed: #c6e743;
+
+  /* Font Size (Typography) */
+  --text-xs: 0.625rem;
+  --text-sm: 0.8125rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5625rem;
+  --text-2xl: 1.9375rem;
+  --text-3xl: 2.4375rem;
+  --text-4xl: 3.0625rem;
+  --text-5xl: 3.8125rem;
+  --text-6xl: 4.75rem;
+  --text-7xl: 5.9375rem;
+  --text-8xl: 7.4375rem;
+  --text-9xl: 9.3125rem;
+
+  /* Font Family (from Text Styles) */
+  --font-noto-sans-jp: "Noto Sans JP", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+
+  /* Text Styles: weight / leading (Figma Text Styles) */
+  --font-weight-heading-brand-large: 500;
+  --leading-heading-brand-large: 1.05;
+  --font-weight-heading-hero: 500;
+  --leading-heading-hero: 1.3;
+  --font-weight-heading-h1: 500;
+  --leading-heading-h1: 1.45;
+  --font-weight-heading-logo: 700;
+  --leading-heading-logo: 1.35;
+  --font-weight-heading-h2: 500;
+  --leading-heading-h2: 1.35;
+  --font-weight-heading-h3: 500;
+  --leading-heading-h3: 1.35;
+  --font-weight-heading-product: 500;
+  --leading-heading-product: 1.35;
+  --font-weight-body-display: 400;
+  --leading-body-display: 1.35;
+  --font-weight-body-arrow: 400;
+  --leading-body-arrow: 1.35;
+  --font-weight-body-regular: 400;
+  --leading-body-regular: 1.6;
+  --font-weight-body-link: 400;
+  --leading-body-link: 1.35;
+  --font-weight-label-action: 500;
+  --leading-label-action: 1.35;
+  --font-weight-body-caption: 400;
+  --leading-body-caption: 1.35;
+  --font-weight-label-overline: 400;
+  --leading-label-overline: 1.35;
+  --font-weight-body-caption-latin: 400;
+  --leading-body-caption-latin: 1.35;
 }
 
 @layer base {
