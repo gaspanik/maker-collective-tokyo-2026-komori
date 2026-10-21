@@ -1,5 +1,5 @@
 {
-  "name": "astro7-tailwind4-starter",
+  "name": "loopthread-mct2026",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -8,12 +8,13 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "pnpm run build && wrangler dev",
     "astro": "astro",
     "astro-upgrade": "pnpm dlx @astrojs/upgrade",
     "lint": "biome lint --write",
     "format": "biome format --write",
-    "check": "biome check --write"
+    "check": "biome check --write",
+    "deploy": "pnpm run build && wrangler deploy"
   },
   "dependencies": {
     "@lucide/astro": "^1.48.0",
@@ -25,7 +26,8 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@biomejs/biome": "2.5.14",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "wrangler": "^4.151.2"
   },
   "overrides": {
     "vite": "^8"
