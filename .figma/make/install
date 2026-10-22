@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-exec pnpm install --frozen-lockfile
+exec pnpm install --no-frozen-lockfile
